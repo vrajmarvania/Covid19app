@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<style>img {
+    margin-bottom: 0.23%;
+}
+.col-md-4 {
+    margin: 1%;
+    width: 30%;
+    border-radius: 11px;
+}.box {
+    margin: 2%;
+}select#country {
+    margin-left: 35%;    border-color: black;
+}
+    form {
+    margin-block: 20px;
+}
+.p-5.mb-3 {
+    border-radius: 15px;
+}.p-4.mb-2 {
+    text-align: center;
+    font-size: x-large;
+}
+.p-4.mb-2.text-dark {
+    font-family: monospace;
+    font-size: 43px;
+}.date {
+    text-align: -webkit-center;
+}form {
+    margin-left: 6%;
+}
+
+{% load static %}
+
+
+</style>
+<body>
+<div class="col-md  ">
+
+    <div class="p-4 mb-2 text-dark"><img src="{% static 'co.png' %}"> Covid-19 Latest Info</div>
+    <div class="date"> LastUpdated:- {{lastupdate}}</div>
+
+</div>
+
+<form action="" method="post">{% csrf_token %}
+    <select class="btn btn-bd-light dropdown-toggle" name="country" id="country">
+
+        {% for i in respons.response %}
+        <option value="{{i.country}}">{{i.country}}</option>
+        {% endfor %}
+    </select>
+    <button class="btn btn-warning" type="submit">Submit</button>
+</form>
+<div class="hidden">
+    <div class="col-md  ">
+
+        <div class="p-4 mb-2 text-dark">{{country}}</div>
+    </div>
+    <div class="box">
+        <div class="row">
+
+            <div class="col-md-4 bg-primary">
+                <p class="fw-bold">New</p>
+                <div class="p-4 mb-2 text-dark">{{New}}</div>
+            </div>
+
+            <div class="col-md-4 bg-secondary">
+                <p class="fw-bold">Active</p>
+                <div class="p-4 mb-2 text-dark"> {{Active}}</div>
+            </div>
+
+            <div class="col-md-4 bg-success">
+                <p class="fw-bold">Discharge</p>
+                <div class="p-4 mb-2 text-dark">{{Discharge}}</div>
+            </div>
+
+            <div class="col-md-4 bg-danger">
+                <p class="fw-bold">Total</p>
+                <div class="p-4 mb-2 text-dark">{{Total}}</div>
+            </div>
+
+            <div class="col-md-4  bg-warning">
+                <p class="fw-bold">Deaths</p>
+                <div class="p-4 mb-2 text-dark">{{Deaths}}</div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

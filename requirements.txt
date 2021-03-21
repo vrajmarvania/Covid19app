@@ -70,7 +70,6 @@ service-identity==18.1.0
 simplejson==3.17.2
 six==1.15.0
 soupsieve==2.0.1
-sqlparse==0.4.1
 urllib3==1.26.3
 virtualenv==20.0.31
 virtualenvwrapper-win==1.2.6

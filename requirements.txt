@@ -77,5 +77,6 @@ virtualenvwrapper-win==1.2.6
 w3lib==1.22.0
 webencodings==0.5.1
 Werkzeug==1.0.1
+whitenoise==5.2.0
 xhtml2pdf==0.2.5
 zope.interface==5.1.2
